@@ -1,5 +1,20 @@
 import React from "react";
 import { render } from 'react-dom';
 
-var reactElement= <h2>こんにちは世界</h2>;
+const title = "こんにちは世界!!";
+const body = "こちらが本文です";
+
+const returnStrings = () => {
+    return "文字列を返す";
+}
+
+
+var reactElement= (
+    <div>
+        <p>{returnStrings()}</p>
+        <h2>{title}</h2>
+        <p>{body}</p>
+    </div>
+);
+
 render(reactElement, document.getElementById('root'))
