@@ -1,19 +1,16 @@
 import React from "react";
 import { render } from 'react-dom';
 
-// 冒頭大文字にする
-//コンポーネント1
-const ReturnReactElement1 = (props) => {
-    // コンソールログでpropsみるとわかりやうし
-    return <h2>{props.music}</h2>
-};
+import { var1, function1, ReactComponent } from "./module";
 
+console.log(var1);
+function1();
 
-//コンポーネント2
-const ReturnReactElement2 = ({name,music}) => {
-    // コンソールログでpropsみるとわかりやうし
-    return <h2>{name} {music}</h2>
-};
+const App = () => (
+    <div>
+        <h2>text</h2>
+    </div>
+)
 
 // カスタムタグ用の閉じる
-render(<ReturnReactElement2 name='ameriken' music='jazz'/>, document.getElementById('root'))
+render(<ReactComponent />, document.getElementById('root'))
