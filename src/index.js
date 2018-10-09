@@ -1,46 +1,18 @@
 import React from "react";
 import { render } from 'react-dom';
 
-
-function name1() {
-    console.log('nanan');
+const returnReactElement = () => {
+    return <h2>text</h2>
 }
 
-const name2 = () => {
-    console.log('name2');
+const returnReactElement2 = () => <h2>text2</h2>
+
+const returnReactElement3 = (hello) => <h2>{hello}</h2>
+
+const returnReactElement4 = (no,name) =>{
+    const newStrings = `${no}番目は${name}さんです。`
+    return <h2>{newStrings}</h2>
+
 }
 
-name1();
-name2();
-
-const name3 = (val) => {
-    console.log(val);
-}
-
-name3('name3')
-
-const name4 = val => {
-    console.log(val);
-}
-
-name4('name4')
-
-const name5 = (val1,val2) => {
-    console.log(val1, val2);
-}
-
-name5('arg1','arg2');
-
-const name6 = () => {
-    return 'name6';
-}
-
-console.log(name6());
-
-const name7 = () => 'name7';
-
-console.log(name7())
-
-const name8 = () => console.log('name8');
-
-name8();
+render(returnReactElement4('#1','Ameriken'), document.getElementById('root'))
