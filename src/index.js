@@ -1,18 +1,19 @@
 import React from "react";
 import { render } from 'react-dom';
 
-const returnReactElement = () => {
-    return <h2>text</h2>
-}
+// 冒頭大文字にする
+//コンポーネント1
+const ReturnReactElement1 = (props) => {
+    // コンソールログでpropsみるとわかりやうし
+    return <h2>{props.music}</h2>
+};
 
-const returnReactElement2 = () => <h2>text2</h2>
 
-const returnReactElement3 = (hello) => <h2>{hello}</h2>
+//コンポーネント2
+const ReturnReactElement2 = ({name,music}) => {
+    // コンソールログでpropsみるとわかりやうし
+    return <h2>{name} {music}</h2>
+};
 
-const returnReactElement4 = (no,name) =>{
-    const newStrings = `${no}番目は${name}さんです。`
-    return <h2>{newStrings}</h2>
-
-}
-
-render(returnReactElement4('#1','Ameriken'), document.getElementById('root'))
+// カスタムタグ用の閉じる
+render(<ReturnReactElement2 name='ameriken' music='jazz'/>, document.getElementById('root'))
