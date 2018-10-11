@@ -8,14 +8,18 @@ const todos = [
     { id: 4, title: "title4" }
 ];
 
-const deleteTargetId = 3;
-const deleteTargetTitle = "title4";
 
-// filter を使って
-// deleteTargetId 以外のものだけを採用する
+const Todos = ({todos}) => {
+    const list = todos.map(todo => {
+        return (
+            <li>
+                {todo.id} {todo.title}
+            </li>
+        );
+    });
 
-const deletedArray = todos.filter(todo => todo.id !== deleteTargetId);
-const deletedArray2 = todos.filter(todo => todo.title !== deleteTargetTitle);
+    return <ul>{list}</ul>;
+}
 
-console.log(deletedArray);
-console.log(deletedArray2);
+render(<Todos todos={todos} />, document.getElementById("root"));
+
