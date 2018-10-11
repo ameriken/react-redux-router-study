@@ -1,22 +1,21 @@
-const array1 = [0, 1, 2, 3, 4];
+import React from "react";
+import { render } from "react-dom";
 
-// indexは配列の何番目か
-// ouputは配列の中身
-// trueが返す場合のみ配列だけを採用
-const newArray1 = array1.filter((output,index) => {
-    return output > 3
-});
+const todos = [
+    { id: 1, title: "title1" },
+    { id: 2, title: "title2" },
+    { id: 3, title: "title3" },
+    { id: 4, title: "title4" }
+];
 
-console.log(newArray1);
+const deleteTargetId = 3;
+const deleteTargetTitle = "title4";
 
-const array2 = ["tanaka", "nakanishi", "sasaki", "koyama", "oda"];
-const newArray2 = array2.filter((output,index) => {
-    return output === 'nakanishi';
-});
-console.log(newArray2);
+// filter を使って
+// deleteTargetId 以外のものだけを採用する
 
-const array3 = ["nakanishi", "Furukawa", "tanaka"];
-const newArray3 = array3.filter((output,index) => {
-    return output.length > 7;
-});
-console.log(newArray3);
+const deletedArray = todos.filter(todo => todo.id !== deleteTargetId);
+const deletedArray2 = todos.filter(todo => todo.title !== deleteTargetTitle);
+
+console.log(deletedArray);
+console.log(deletedArray2);
