@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from 'react-dom';
 
+import "./App.css";
 
 class H2O extends React.Component {
     constructor(props) {
@@ -14,21 +15,21 @@ class H2O extends React.Component {
         }
 
         if(100 <= temp) {
-            return "steam';"
+            return "steam";
         }
         return "water";
     }
 
     render () {
         return (
-            <div>
+            <div className={this.H2OState(this.state.temp)}>
                 <h2>phase: { this.H2OState (this.state.temp)}</h2>
                 <button onClick={this.onPlusClick}>+</button>
                 <button onClick={this.onPlus10Click}>+10</button>
                 <button onClick={this.onMinusClick}>-</button>
                 <button onClick={this.onMinus10Click}>-10</button>
             </div>
-        )
+        );
     }
 
     onPlusClick= () => {
@@ -47,4 +48,4 @@ class H2O extends React.Component {
         this.setState({ temp: this.state.temp - 10});
     }
 }
-render(<H2O />, document.getElementById('root'))
+render(<H2O />, document.getElementById('root'));
