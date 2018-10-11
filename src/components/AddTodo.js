@@ -4,7 +4,7 @@ import React from "react";
 export class AddTodo extends React.Component {
     constructor(props){
         super(props);
-        this.state = {title : "test"};
+        this.state = {title : ""};
     }
 
     render() {
@@ -26,7 +26,8 @@ export class AddTodo extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        alert(this.state.title);
-        this.setState({title: ""})
+        {/*this.state.titleが引数となりTodoApp.jsのaddTodo3の関数へ行く*/}
+        this.props.addTodo2(this.state.title);
+        this.setState({title: ""});
     };
 }

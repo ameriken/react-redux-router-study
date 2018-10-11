@@ -7,7 +7,7 @@ export class List extends React.Component {
     }
 
     render() {
-        const list = this.props.todos.map(todo => {
+        const list = this.props.todos2.map(todo => {
             return (
                 <li>
                     #{todo.id} {todo.title}
