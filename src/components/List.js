@@ -7,12 +7,13 @@ export class List extends React.Component {
     }
 
     render() {
-        const list = this.props.todos2.map(todo => {
+        const {deleteTodo2,todos2 } = this.props
+        const list = todos2.map(todo => {
             return (
                 <li key={todo.id}>
                     #{todo.id} {todo.title}
                     <button onClick={ () => {
-                        this.props.deleteTodo2(todo.id);
+                        deleteTodo2(todo.id);
                     }}>delete
                     </button>
                 </li>
