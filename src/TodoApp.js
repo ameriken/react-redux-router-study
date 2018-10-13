@@ -28,15 +28,23 @@ export class TodoApp extends React.Component {
                 this.addTodo3は34行目に定義したaddTodoの関数
                  */}
                 <AddTodo addTodo2={this.addTodo3}/>
-                <List todos2={this.state.todos3} />
+                <List deleteTodo2={this.deleteTodo3} todos2={this.state.todos3} />
             </div>
         );
     }
 
     addTodo3 = title => {
         this.setState({
-            todos: [...this.state.todos, { id:this.state.nextId + 1, title:title }],
-            nextId: this.state.id + 1
+            todos3: [...this.state.todos3, { id:this.state.nextId + 1, title:title }],
+            nextId: this.state.nextId + 1
         });
-    }
+    };
+
+    deleteTodo3 = id => {
+        this.setState({
+            todos3: this.state.todos3.filter(todo => {
+                return todo.id !== id;
+            })
+        });
+    };
 }
