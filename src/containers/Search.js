@@ -13,4 +13,11 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(null, mapDispatchToProps)(Search);
+const mapStateToProps= state => {
+    return {
+        buttonText: state.buttonText
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

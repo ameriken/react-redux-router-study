@@ -7,11 +7,12 @@ class Search extends React.Component {
     }
 
     render() {
+        const { buttonText } = this.props;
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <input value={this.state.title} onChange={this.handleChange} />
-                    <input type="submit" value="Find Your GIFs" />
+                    <input type="submit" value={buttonText} />
                 </form>
             </div>
         );
@@ -22,7 +23,6 @@ class Search extends React.Component {
         this.setState({ title: title });
     };
 
-    h
     handleSubmit = event => {
         // connect で与えられたメソッドを受け取る
         const { getUrls } = this.props;
