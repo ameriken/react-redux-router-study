@@ -1,11 +1,13 @@
 import React from "react";
 import ImageList from './containers/ImageList';
+import Search from './containers/Search';
 
 
 const App = () => {
     return (
         <div>
-            App<ImageList />
+            <Search />
+            <ImageList />
         </div>
     );
 };
