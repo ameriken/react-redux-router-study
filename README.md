@@ -15,3 +15,7 @@ AppというコンポーネントにmapStetetoProps,mapDispatchToPropsを紐づ�
 ここでは
 mapStateToPropsはstateを私
 mapDispatchToPropsはdispatchを渡しています
+
+## reduxとreact-reduxの違い
+reduxはstateに組み込んでいくもの
+react-reduxはreactに組み込んでいくもの(Providerとか)
