@@ -32,6 +32,7 @@ export default class App extends Component {
                         {/* exactは完全一致で判定といういみ */}
                         < Route exact path="/" component={MyTop}/>
                         < Route path="/hello" component={MyHello}/>
+                        {/*パラメータを含めます :id */}
                         < Route path="/article/" component={MyArticle}/>
                     </Switch>
                 </div>
