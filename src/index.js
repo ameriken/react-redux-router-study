@@ -1,13 +1,10 @@
 import React from "react";
 import { render } from 'react-dom';
-import MyAttrMulti from './MyAttrMulti';
-
-const data = {
-    name: 'あめりけん権左衛門',
-    age: 18,
-    sex: '男',
-};
+import MyHelloContent from "./MyHelloContent";
 
 render(
-    <MyAttrMulti{...data} />,
-    document.getElementById('root'))
+    <MyHelloContent>
+        <b>山田</b>
+    </MyHelloContent>,
+    document.getElementById('root')
+);
