@@ -1,8 +1,12 @@
 import React from "react";
 import { render } from 'react-dom';
-import MyHello from './MyHello'
+//import MyProp,{Member} from "./MyProp";
+import MyProp from "./MyProp";
 
 render(
-    <MyHello name={'ameriken'} />,
+    //正しい例
+    /*<MyProp prop1={new Member()} />,*/
+    //ダメな例
+    <MyProp prop1={"hoge"} />,
     document.getElementById('root')
 );
