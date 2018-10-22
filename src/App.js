@@ -34,6 +34,8 @@ export default class App extends Component {
                         < Route path="/hello" component={MyHello}/>
                         {/*パラメータを含めます :id */}
                         < Route path="/article/" component={MyArticle}/>
+                        {/*path属性抜きのルートはすべてのURLにマッチします。よって、すべてにマッチしない場合はMyTopに戻すようなか書き方ができる*/}
+                        < Route component={MyTop}/>
                     </Switch>
                 </div>
             </Router>
