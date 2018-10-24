@@ -1,28 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React ,{ Component } from "react";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+import Home from './components/Home'
+import About from './components/About'
+import Topics from './components/Topics'
+
+export default class App extends Component {
+    render() {
+        return(
+            <Router>
+                <div>
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/topics">Topics</Link></li>
+                    </ul>
+
+                    <hr />
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/about" component={About} />
+                        <Route path="/topics" component={Topics} />
+                    </Switch>
+
+                </div>
+            </Router>
+        );
+    }
 }
 
-export default App;
+//この書き方だと渡せる
+//const Topics = ({ match }) => {
+//    console.log(match);
+//    return <h1>hello{match.params.username}!</h1>;
+//};
